@@ -6,5 +6,7 @@ creacion de auto
 
 
 {% block main %}
-Se creo el auto {{auto class=marca}} {{auto.modelo}}
+<h1>Auto Creado</h1>
+<p class="{{ auto.marca }}">Marca: {{ auto.marca }}</p>
+<p>Modelo: {{ auto.modelo }}</p>
 {% endblock main %}

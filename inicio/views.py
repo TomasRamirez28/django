@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from datetime import datetime
-from django.template import Template, Context, loader
-import random
-
 from django.http import HttpResponse
+from django.template import Template, Context, loader
+
 from inicio.models import Auto
+import random
 
 def inicio(request):
     #return HttpResponse("Bienvenidos a mi inicio")
@@ -12,8 +12,9 @@ def inicio(request):
 
 def template1(request, nombre, apellido,edad): 
     fecha = datetime.now()
+    suma = 4+edad
     
-    return HttpResponse(f"<h1>Mi template 1</h1> -- Fecha: {fecha}-- buenas {nombre} {apellido}") 
+    return HttpResponse(f"<h1>Mi template 1</h1> -- Fecha: {fecha}-- buenas {nombre} {apellido} {edad}") 
 
 def template2(request, nombre, apellido, edad):
     
@@ -51,8 +52,6 @@ def template3(request, nombre, apellido, edad):
         "edad": edad,
         }
      
-    contexto= Context()
-    
     template_renderizado = template.render(datos)
     
     return HttpResponse(template_renderizado)
@@ -61,9 +60,6 @@ def template3(request, nombre, apellido, edad):
 
 def template4(request, nombre, apellido, edad):
     
-
-
-    
     fecha = datetime.now()
     datos = {
         "fecha": fecha,
@@ -71,11 +67,7 @@ def template4(request, nombre, apellido, edad):
         "apellido": apellido,
         "edad": edad,
         }
-     
 
-    
-
-    
     return render(request,"template2.html",datos)
 
 
@@ -90,3 +82,6 @@ def crear_auto(request, marca, modelo):
     auto = Auto(marca=marca, modelo=modelo)
     auto.save()
     return render(request, "auto_templates/creacion.html", {"auto" : auto})
+
+def crear_auto_v2(request):
+    return render(request,'inicio/crear_auto_v2.html')
