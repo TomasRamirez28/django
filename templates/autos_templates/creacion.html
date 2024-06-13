@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Se creo el auto {{<auto class="marca"}} {{auto.modelo}}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block h1_header %}
+creacion de auto
+{% endblock h1_header %}
+
+
+{% block main %}
+Se creo el auto {{auto class=marca}} {{auto.modelo}}
+{% endblock main %}

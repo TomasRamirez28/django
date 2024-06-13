@@ -10,7 +10,7 @@ def inicio(request):
     #return HttpResponse("Bienvenidos a mi inicio")
     return render(request, 'inicio/index.html')
 
-def template1(request, nombre, apellido): 
+def template1(request, nombre, apellido,edad): 
     fecha = datetime.now()
     
     return HttpResponse(f"<h1>Mi template 1</h1> -- Fecha: {fecha}-- buenas {nombre} {apellido}") 
@@ -89,4 +89,4 @@ def probando(request):
 def crear_auto(request, marca, modelo):
     auto = Auto(marca=marca, modelo=modelo)
     auto.save()
-    return render(request,"auto_templates/creacion.html", {"auto" : auto})
+    return render(request, "auto_templates/creacion.html", {"auto" : auto})

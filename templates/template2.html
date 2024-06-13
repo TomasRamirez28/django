@@ -1,1 +1,14 @@
-<h1>Mi template 1</h1> -- Fecha: {{fecha}}-- buenas {{nombre}} {{apellido}} {{edad}}
+
+{% extends "inicio/index.html" %}
+
+{% block h1_header %}
+mi Template 1
+{% endblock h1_header %}
+
+{% block main %}
+-- Fecha: {{fecha}}-- buenas {{nombre}} {{apellido}} {{edad}}
+{% endblock main %}
+
+    
+
+
